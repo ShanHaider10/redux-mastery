@@ -3,6 +3,7 @@ import express from "express";
 import next from "next";
 import cors from "cors";
 import connectDB from "./src/config/db.js";
+import {errorMiddleware} from "./src/middleware/error.js"
 const dev = process.env.NODE_ENV !== "production";
 const app = next({ dev });
 config({ path: ".env" });
@@ -25,6 +26,7 @@ app.prepare().then(async () => {
     return res.json({ message: "this is a custom api" });
   });
 
+  server.use(errorMiddleware);
   server.listen(PORT, (err) => {
     if (err) throw err;
     console.log(`Ready on http://localhost:${PORT}`);
