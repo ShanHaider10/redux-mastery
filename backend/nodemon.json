@@ -1,0 +1,17 @@
+{
+  "watch": [
+    "pages",
+    "src",
+    "app",
+    "public",
+    "components",
+    "server.js",
+    "utils",
+    "server",
+    "lib",
+    "models",
+    "automation"
+  ],
+  "ext": "js,jsx,ts,tsx,html,css,json",
+  "exec": "node server.js"
+}
